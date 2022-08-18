@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="./scss/style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="header">
+            <label for="para">Tache à faire</label>
+            <textarea name="para" id="para"></textarea>
+            <select id="select" onchange="switchValue()">
+                <option value="travail">travail</option>
+                <option value="perso">perso</option>
+            </select>
+            <div class="buttons">
+                <button onclick="suppressionTxt()">supprimé</button>
+                <button onclick="ajout()">ajouté</button>
+            </div>
+        </div>
+        <div class="searchbar">
+            <input type="search" placeholder="Recherche" id="searchbar" onkeyup="searchbar()">
+            <select id="selectSearch" onchange="searchbar()">
+                <option value="tout">Tout</option>
+                <option value="travail">travail</option>
+                <option value="perso">perso</option>
+            </select>
+        </div>
+
+        </header>
+        <main>
+            <ul class="contenu" id="content">
+            </ul>
+        </main>
+        <script src="./js/main.js"></script>
+    </body>
+
+</html>
