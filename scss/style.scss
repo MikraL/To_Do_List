@@ -16,6 +16,38 @@
         right: auto;
     }
 }
+@keyframes moove {
+    from {
+        left: -200px;
+    }
+    to {
+       left : 1300px;
+    }
+}
+
+@keyframes die {
+    0% {
+        bottom: 100px;
+    }
+    50% {
+     bottom: 200px;
+     left: 67%;
+    }
+    100% {
+        bottom: 100px;
+        left: 65%;
+        transform: rotate(-4000deg);
+    }
+}
+
+@keyframes clue {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 110%;
+    }
+}
 //mixins
 @mixin dcc {
     display: flex;
@@ -28,6 +60,7 @@ body {
     background-color: #2f2f2f;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     background: {
         image:url('../utils/wallpaper.png');
         size:cover;
@@ -176,5 +209,30 @@ body {
             cursor: move;
             user-select: none;
         }
+    }
+    .mario {
+      width: 200px;
+      height: 200px;  
+      background: {
+        image:url('../utils/mario.gif');
+        size:cover;
+      };
+      position: absolute;
+      left: -200px;
+      bottom:100px;
+      animation: moove 6s 1s linear, die 1s 6s ease-out;
+    }
+    .clue {
+        z-index: -3;
+        width: 75px;
+        height: 58px;
+        background: {
+            image:url('../utils/NicePng_nuage-png_3855536.png');
+            size:cover;
+          };
+          position: absolute;
+          right: -100px;
+          top:100px;
+          animation: clue 30s linear infinite;
     }
 }
